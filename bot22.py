@@ -27,7 +27,7 @@ with smart_run(session):
                                     min_following=75)
 
 
-  #getting my followers and following
+  #getting your followers and following
 
     u_followers = session.grab_followers(username=UN, amount="full", live_match=False, store_locally=True)
     u_following = session.grab_following(username=UN, amount="full", live_match=False, store_locally=True)
