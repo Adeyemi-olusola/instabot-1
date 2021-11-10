@@ -29,8 +29,8 @@ with smart_run(session):
 
   #getting my followers and following
 
-    mwp_followers = session.grab_followers(username="mobile_wallpaper_photography", amount="full", live_match=False, store_locally=True)
-    mwp_following = session.grab_following(username="mobile_wallpaper_photography", amount="full", live_match=False, store_locally=True)
+    u_followers = session.grab_followers(username=UN, amount="full", live_match=False, store_locally=True)
+    u_following = session.grab_following(username=UN, amount="full", live_match=False, store_locally=True)
 
    #feeds
 
@@ -61,7 +61,7 @@ with smart_run(session):
     session.set_dont_like(['nude', 'porn','naked'])
     session.set_comments(['awesome','nice','great'])
     session.set_do_comment(enabled=True, percentage=20)
-    session.follow_likers (mwp_followers, photos_grab_amount = 2, follow_likers_per_photo = 2, randomize=True, sleep_delay=600, interact=True)
+    session.follow_likers (u_followers, photos_grab_amount = 2, follow_likers_per_photo = 2, randomize=True, sleep_delay=600, interact=True)
 
     #follow likers of new following
 
@@ -70,7 +70,7 @@ with smart_run(session):
     session.set_dont_like(['nude', 'porn','naked'])
     session.set_comments(['nice','great'])
     session.set_do_comment(enabled=True, percentage=33)
-    session.follow_likers (mwp_following, photos_grab_amount = 2, follow_likers_per_photo = 2, randomize=True, sleep_delay=600, interact=True)
+    session.follow_likers (u_following, photos_grab_amount = 2, follow_likers_per_photo = 2, randomize=True, sleep_delay=600, interact=True)
 
 
     #follow own followers following
@@ -81,7 +81,7 @@ with smart_run(session):
     session.set_comments(['nice','great'])
     session.set_comments(['good one'], media='Photo')
     session.set_do_comment(enabled=True, percentage=25)
-    session.follow_user_following(mwp_followers, amount=2, randomize=True, sleep_delay=90, interact=True)
+    session.follow_user_following(u_followers, amount=2, randomize=True, sleep_delay=90, interact=True)
 
     #unfollow
     session.unfollow_users(amount=40, allFollowing=True, style="RANDOM", unfollow_after=3*24*60*60, sleep_delay=450)
