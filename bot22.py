@@ -43,10 +43,8 @@ with smart_run(session):
 
     #like by tags
 
-    session.set_user_interact(amount=1, randomize=True, percentage=50)
     session.set_do_follow(enabled=True, percentage=75, times=1)
     session.set_comments(["Cool", "Super!","nice"])
-    session.set_comments(['Nice video!'], media='Video')
     session.set_do_comment(enabled=True, percentage=50)
     session.like_by_tags(HT_list, amount=3)
 
