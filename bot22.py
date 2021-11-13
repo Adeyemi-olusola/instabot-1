@@ -36,9 +36,7 @@ with smart_run(session):
 
     session.set_user_interact(amount=1, randomize=True, percentage=25)
     session.set_do_like(enabled=True,percentage=100)
-    session.set_do_follow(enabled=True, percentage=50, times=2)
     session.set_comments(['This post is 🔥', 'Really Cool', 'I like your stuff'])
-    session.set_comments(['Great Video!'], media='Video')
     session.set_do_comment(enabled=True, percentage=33)
     session.like_by_feed(amount=16, randomize=True, unfollow=True, interact=True)
     session.set_dont_like(["nude", "porn","naked"])
@@ -51,14 +49,11 @@ with smart_run(session):
     session.set_comments(['Nice video!'], media='Video')
     session.set_do_comment(enabled=True, percentage=50)
     session.like_by_tags(HT_list, amount=3)
-    session.set_dont_like(["nude", "porn","naked"])
-
 
    #follow likers of new followers
 
     session.set_user_interact(amount=1, randomize=True, percentage=33)
     session.set_do_like(enabled=True,percentage=100)
-    session.set_dont_like(['nude', 'porn','naked'])
     session.set_comments(['awesome','nice','great'])
     session.set_do_comment(enabled=True, percentage=20)
     session.follow_likers (u_followers, photos_grab_amount = 2, follow_likers_per_photo = 2, randomize=True, sleep_delay=600, interact=True)
@@ -67,7 +62,6 @@ with smart_run(session):
 
     session.set_user_interact(amount=1, randomize=True, percentage=45)
     session.set_do_like(enabled=True,percentage=100)
-    session.set_dont_like(['nude', 'porn','naked'])
     session.set_comments(['nice','great'])
     session.set_do_comment(enabled=True, percentage=33)
     session.follow_likers (u_following, photos_grab_amount = 2, follow_likers_per_photo = 2, randomize=True, sleep_delay=600, interact=True)
@@ -77,7 +71,6 @@ with smart_run(session):
 
     session.set_user_interact(amount=1, randomize=False, percentage=33)
     session.set_do_like(enabled=True,percentage=100)
-    session.set_dont_like(['nude', 'porn','naked'])
     session.set_comments(['nice','great'])
     session.set_comments(['good one'], media='Photo')
     session.set_do_comment(enabled=True, percentage=25)
